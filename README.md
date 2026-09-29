@@ -1,70 +1,104 @@
-# Getting Started with Create React App
+# React Job Board
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A small React job-board dashboard for **Scopt Enterprises**. The app displays the
+number of jobs scheduled today and an estimate for next week, with messages that
+change for quiet, normal, and busy days.
 
-## Available Scripts
+## Why use this project?
 
-In the project directory, you can run:
+- Provides a focused example of composing a React application from components.
+- Demonstrates JSX expressions, conditional rendering, template literals, and
+  inline styles.
+- Uses Create React App for a familiar development server, test runner, and
+  production build.
+- Includes a responsive, dark dashboard presentation with separate styling for
+  today's and next week's job summaries.
 
-### `npm start`
+The current dashboard uses sample values in [`src/JobBoard.js`](src/JobBoard.js).
+It is intended as a lightweight starting point for connecting a real jobs API,
+adding filters, or expanding the board into a larger scheduling workflow.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Getting started
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Prerequisites
 
-### `npm test`
+- Node.js and npm
+- A modern web browser
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Install
 
-### `npm run build`
+Clone the repository, enter the project directory, and install its dependencies:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+git clone https://github.com/VoidLance/course-files-javascript-react-job-board.git
+cd course-files-javascript-react-job-board
+npm install
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Run the development server
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+npm start
+```
 
-### `npm run eject`
+Open <http://localhost:3000> in your browser. The page reloads automatically
+when source files change.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Use the dashboard
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The displayed company, job count, and estimate are configured near the top of
+[`JobBoard`](src/JobBoard.js):
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```js
+const companyName = "Scopt Enterprises";
+const jobCount = 5;
+const nextWeekJobs = jobCount * 1.5;
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Change `jobCount` and save the file to see the dashboard message switch between
+no jobs, a normal day, and a busy day.
 
-## Learn More
+## Available commands
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+| Command | Purpose |
+| --- | --- |
+| `npm start` | Start the local development server. |
+| `npm test` | Run the Jest and React Testing Library test suite. |
+| `npm run build` | Create an optimized production bundle in `build/`. |
+| `npm run eject` | Copy Create React App configuration into the project. This is irreversible and usually unnecessary. |
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Project structure
 
-### Code Splitting
+```text
+public/              Static HTML, manifest, icons, and robots.txt
+src/App.js           Application shell
+src/JobBoard.js      Job summary component and sample dashboard logic
+src/App.css          Dashboard layout and component styles
+src/index.js         React entry point
+src/App.test.js      Application tests
+package.json         Scripts and dependencies
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Help and documentation
 
-### Analyzing the Bundle Size
+For project questions or bug reports, [open an issue on
+GitHub](https://github.com/VoidLance/course-files-javascript-react-job-board/issues).
+For framework and tooling reference, see the [React
+documentation](https://react.dev/) and [Create React App
+documentation](https://create-react-app.dev/docs/getting-started/).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Contributing
 
-### Making a Progressive Web App
+Contributions are welcome:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+1. Fork the repository and create a focused feature or fix branch.
+2. Install dependencies with `npm install`.
+3. Make and test your changes with `npm test` and, when relevant,
+   `npm run build`.
+4. Open a pull request with a clear summary of the change and its verification.
 
-### Advanced Configuration
+Please keep changes focused and update relevant tests when behavior changes.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Maintainer
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is maintained by [VoidLance](https://github.com/VoidLance).
